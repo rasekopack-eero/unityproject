@@ -6,13 +6,16 @@ public class RaycastScript : MonoBehaviour
 {
     void FixedUpdate()
     {
-        Vector3 fwd = transform.InverseTransformDirection(Vector3.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, fwd, out hit))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (hit.transform.gameObject.tag == "Enemy")
+            Vector3 fwd = transform.InverseTransformDirection(Vector3.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, fwd, out hit))
             {
-                Debug.Log("enemy hit");
+                if (hit.transform.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("enemy hit");
+                }
             }
         }
     }
