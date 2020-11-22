@@ -10,7 +10,7 @@ public class RaycastScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
-            if (hit.transform.gameObject.tag == "enemy")
+            if (hit.transform.gameObject.tag == "Enemy")
             {
                 Debug.Log("enemy hit");
             }
